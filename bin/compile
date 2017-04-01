@@ -56,7 +56,7 @@ EOF
 
 PATH=$PATH:/app/.local/bin
 cp ${OPT_DIR}/heroku.pl .
-SOURCES="heroku.pl $(cat ${build}/swipl.manifest)"
+SOURCES="$(cat ${build}/swipl.manifest)"
 if [[ "z${SOURCES}" == "z" ]]; then
     echo "------> Compiling all .pl files in root directory"
     SOURCES="*.pl"
