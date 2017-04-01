@@ -33,7 +33,7 @@ else
     echo "Cannot compile with ${SWI_VERSION} as we do not have enough time to compile it and a pre-built version is not available"
     exit 1
 fi
-    
+
 PATH=${cache}/.local/bin:$PATH
 export PATH
 
@@ -62,6 +62,5 @@ if [[ "z${SOURCES}" == "z" ]]; then
     SOURCES="*.pl"
 fi
 
-/app/.local/bin/swipl -q -o ${build}/swipl-heroku -g heroku -t prolog --stand_alone=true -c ${SOURCES}
+/app/.local/bin/swipl -q -o ${build}/swipl-heroku -g main --stand_alone=true -c ${SOURCES}
 echo "-----> Build succeeded"
-
